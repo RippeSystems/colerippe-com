@@ -1,25 +1,25 @@
 const heroVideo = document.getElementById('heroVideo');
-const heroSources = [
-  'assets/video/loop-12.mp4',
-  'assets/video/loop-10.mp4',
-  'assets/video/loop-4.mp4',
-  'assets/video/loop-7.mp4',
-  'assets/video/loop-1.mp4'
-];
-let heroIndex = 0;
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-if (!reduceMotion && heroVideo) {
-  setInterval(() => {
-    heroIndex = (heroIndex + 1) % heroSources.length;
-    heroVideo.classList.add('switching');
-    setTimeout(() => {
-      heroVideo.src = heroSources[heroIndex];
-      heroVideo.load();
-      heroVideo.play().catch(() => {});
-      setTimeout(() => heroVideo.classList.remove('switching'), 120);
-    }, 330);
-  }, 7600);
+// Hero is intentionally locked to the opening takeoff sequence from loop 12.
+// Restart before the aftermath section so the top of the page continuously
+// repeats the portrait → lightning → lift-off moment.
+const HERO_LOOP_START = 0;
+const HERO_LOOP_END = 6.4;
+
+if (heroVideo) {
+  heroVideo.addEventListener('timeupdate', () => {
+    if (heroVideo.currentTime >= HERO_LOOP_END) {
+      heroVideo.currentTime = HERO_LOOP_START;
+      if (!reduceMotion) heroVideo.play().catch(() => {});
+    }
+  });
+
+  heroVideo.addEventListener('loadedmetadata', () => {
+    if (heroVideo.currentTime > HERO_LOOP_END) {
+      heroVideo.currentTime = HERO_LOOP_START;
+    }
+  });
 }
 
 const revealObserver = new IntersectionObserver((entries) => {
