@@ -33,20 +33,4 @@ const revealObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.12 });
 document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
-const videoObserver = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    const video = entry.target;
-    if (entry.isIntersecting) {
-      if (!video.src) {
-        video.src = video.dataset.src;
-        video.load();
-      }
-      video.play().catch(() => {});
-    } else {
-      video.pause();
-    }
-  });
-}, { rootMargin: '200px 0px', threshold: 0.05 });
-document.querySelectorAll('.lazy-video').forEach(v => videoObserver.observe(v));
-
 document.getElementById('year').textContent = new Date().getFullYear();
