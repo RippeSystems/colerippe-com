@@ -27,7 +27,9 @@ that a GitHub push is live until that connection is established and verified.
 - Deployment pin change in private Arcade repo: `3bd5968f97f42484ddafe149c4f357bbd6022273`.
 - Successful deployment run: [40698299208](https://github.com/RippeSystems/rippe-arcade/actions/runs/40698299208).
 - Browser-verifier pin/change: `e01d22f9e79be30c1dcbbe63fe24658de365b9b7`.
-- Successful browser run: [40698561083](https://github.com/RippeSystems/rippe-arcade/actions/runs/40698561083).
+- Initial successful browser run: [40698561083](https://github.com/RippeSystems/rippe-arcade/actions/runs/40698561083).
+- Expanded read-only break-loop verifier: `f41325ce9d68dd478efd349808b9e833999069da`;
+  latest successful browser run [40700443970](https://github.com/RippeSystems/rippe-arcade/actions/runs/40700443970).
 - Public site: https://colerippe.com/ .
 - Preview: https://colerippe-com.rippesystems.workers.dev/ .
 - Target: `wrangler.jsonc`, Worker `colerippe-com`, assets `./public`.
@@ -71,7 +73,11 @@ that a GitHub push is live until that connection is established and verified.
    checks HTTPS, the seven exact project links/text, title, 25 asset hashes
    (including shared footer CSS), one playing hero, desktop 1440×1000 and mobile
    390×844 without overflow/JS errors, the www 301 preserving path/query,
-   TradeCalc HTTPS and identical four-link footers. Read the job's
+   TradeCalc HTTPS and identical four-link footers. It also checks the live
+   break card's third-calculation/export triggers, error suppression, dismissal,
+   session limit, preserved result, new-tab Reactor default, protected game URLs,
+   keyboard merge and conditional game-over return. These use isolated browser
+   storage and make no signup or server-data writes. Read the job's
    `COLE_LIVE_QA` output rather than assuming a successful upload proves QA.
 8. Record source/pin SHAs, deployment and browser run IDs, actual verification,
    and limitations in both activity logs. Keep each live release separate.
