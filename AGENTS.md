@@ -29,3 +29,5 @@
 
 
 - 2026-10-28 — ChatGPT: added the canonical shared house-navigation footer (TradeCalc, Arcade, Rentals, colerippe.com) and identical local copy for TradeCalc. Hub remains navigation/shared-strip source; products and deploy paths stay separate. No Requests destination, programmatic ads, DNS, media or project-link changes. Pinned source deployment and browser verification pending.
+
+- 2026-10-28 — ChatGPT: shared-footer release verified live in deployment run 40698299208 and browser run 40698561083 (25 asset hashes, exact matching TradeCalc/footer links, seven projects, single playing hero, desktop/mobile layout and www redirect). Documented exact approved pinned workflow steps, rollback, shared-strip ownership and direct-connection limitation in docs/DEPLOYMENT-RUNBOOK.md. No new credential/access or direct deploy connection established; documentation-only update, no live deployment.

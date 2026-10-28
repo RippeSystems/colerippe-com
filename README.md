@@ -62,3 +62,16 @@ No scheduled migration or polling job remains running. Keep the prior Netlify si
 ## Rollback reference
 
 The old website records were DNS-only CNAMEs, TTL 300: apex to `apex-loadbalancer.netlify.com`, www to `colerippe.netlify.app`. Restoring them requires removing only the corresponding Worker custom-domain attachments first. Do not change nameservers, TradeCalc, or unrelated DNS during a website-hosting rollback.
+
+## Current release and exact routine procedure — 2026-10-28
+
+Shared footer source `775f5ff4f29a6d89afc32652b792695978141b6d` is live. Isolated
+run `40698299208` deployed it; browser run `40698561083` verified the 25 asset
+hashes, exact four-link footer on both sites, seven projects, one playing hero,
+mobile layout and www redirect. DNS and product deployment paths are unchanged.
+
+[Approved deployment runbook](docs/DEPLOYMENT-RUNBOOK.md) gives the exact pinned
+workflow steps and current verified IDs. A direct deployment connection for
+this source repo has not been established; source pushes alone still do not
+publish. Canonical shared markup is `shared/rippe-footer.html` with
+`public/rippe-footer.css`; products keep identical local copies in separate repos.
