@@ -26,3 +26,6 @@
 - 2026-10-27 — ChatGPT: removed the six-video lower Visual system section, its Reel navigation link, and unused reel styles/playback observer at Cole's request. Renumbered Now/Connect; preserved all seven projects and the opening 0–6.4-second hero loop. JavaScript syntax, remaining video count, and internal section links verified. Cloudflare publication pending the isolated pinned deployment workflow.
 
 - 2026-10-27 — ChatGPT: lower-video removal from source `949b20f2467beb4a818585ef88d14d12e205821b` deployed successfully in isolated run `40584924066` / job `122473730170`. Live https://colerippe.com/ now has exactly one playing hero video, zero Reel section/navigation references, all seven projects, and no horizontal overflow. Source checks passed and hero loop code remains unchanged. Companion Arcade run `40584923852` succeeded. No DNS, domain, or credential changes.
+
+
+- 2026-10-28 — ChatGPT: added the canonical shared house-navigation footer (TradeCalc, Arcade, Rentals, colerippe.com) and identical local copy for TradeCalc. Hub remains navigation/shared-strip source; products and deploy paths stay separate. No Requests destination, programmatic ads, DNS, media or project-link changes. Pinned source deployment and browser verification pending.

@@ -1,0 +1,2 @@
+.rippe-strip{box-sizing:border-box;display:flex;flex:0 0 100%;grid-column:1/-1;width:100%;align-items:center;justify-content:center;gap:7px;flex-wrap:wrap;padding:14px 8px;font:400 12px/1.6 system-ui,sans-serif;letter-spacing:normal;text-transform:none;color:inherit}.rippe-strip a{color:inherit;text-decoration:underline;text-underline-offset:3px}.rippe-strip a:focus-visible{outline:2px solid currentColor;outline-offset:4px}@media print{.rippe-strip{display:none!important}}
+footer:has(>.rippe-strip){flex-wrap:wrap}
